@@ -29,6 +29,40 @@ ul {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.link {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
 
 /* container */
@@ -44,23 +78,16 @@ img {
 /* Logo */
 .logo {
   color: var(--accent-color);
-  font-family: "Raleway", cursive;
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
   text-decoration: none;
 }
-/* List style */
-.list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
+
 /* site nav */
 .site-nav .link {
-  color: #212121;
-  text-decoration: none;
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -69,12 +96,15 @@ img {
 .site-nav .link:focus {
   color: var(--accent-color);
 }
-.site-nav .link.current {
-  color: var(--accent-color);
+.site-nav-link {
+  color: #212121;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+}
+.current {
+  color: var(--accent-color);
 }
 .site-nav {
   display: flex;
@@ -128,16 +158,15 @@ img {
 }
 
 .mainbusiness .text {
-  font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
 
-.hidden {
-  display: none;
-}
 /* aboutus */
+.about {
+  padding-top: 0;
+}
 .aboutus {
   display: flex;
 }
@@ -162,11 +191,13 @@ img {
 
 .ourteam .tittle {
   color: var(--tittle-text-color);
-  margin-top: 30px;
-  margin-bottom: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
 }
 .ourteam .text {
-  font-weight: 400;
+  color: var(--primary-text-color);
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
@@ -179,19 +210,18 @@ img {
   background-color: #f5f4fa;
 }
 .ourteam .content {
-  width: 270px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  border: 1px transparent;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 /* footer */
-
 .footer {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.footer .container {
-  justify-content: flex-start;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  background-color: #2f303a;
+  padding: 60px 0;
 }
 .footer .logocolor {
   color: #ffffff;
@@ -222,7 +252,9 @@ img {
 }
 
 /* header */
-
+.header {
+  border-bottom: 1px solid #ececec;
+}
 .header-navigation {
   display: flex;
   align-items: center;
@@ -235,6 +267,7 @@ img {
   margin-left: 50px;
 }
 .header-auth {
+  display: flex;
   margin-left: auto;
 }
 
@@ -243,19 +276,20 @@ img {
 }
 .header-contacts {
   text-decoration: none;
-  color: #757575;
+  color: var(--primary-text-color);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
 .header-contacts:hover,
-.site-nav .link:focus {
+.header-contacts:focus {
   color: var(--accent-color);
 }
 
 /* hero */
 .hero {
+  background-color: #2f303a;
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
@@ -268,6 +302,7 @@ img {
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .hero .button {
@@ -277,6 +312,7 @@ img {
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
+  cursor: pointer;
   border-radius: 4px;
   padding: 10px 32px;
 }
@@ -286,8 +322,6 @@ img {
   padding-bottom: 94px;
 }
 .portfolio-tittle {
-  margin-top: 20px;
-  margin-bottom: 0;
   color: var(--tittle-text-color);
   font-weight: 700;
   font-size: 18px;
@@ -297,8 +331,6 @@ img {
 }
 .cards .text {
   margin-top: 4px;
-  margin-bottom: 0;
-  font-weight: 400;
   font-size: 16px;
   line-height: 1.88;
   text-align: left;
@@ -317,6 +349,7 @@ img {
   font-size: 16px;
   line-height: 1.63;
   letter-spacing: 0.03em;
+  cursor: pointer;
   border-radius: 4px;
   padding: 6px 22px;
   min-width: 70px;
@@ -325,7 +358,7 @@ img {
 
 .filters {
   margin-top: 0;
-  margin-bottom: 34px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
 }
@@ -337,7 +370,7 @@ img {
 }
 .filters .button:hover,
 .filters .button:focus {
-  color: #ffffff;
+  color: var(--button-color);
   background-color: #2196f3;
 }
 
@@ -355,9 +388,4 @@ img {
 }
 .cards-element:nth-last-child(-n + 3) {
   margin-bottom: 0;
-}
-
-/* bcground */
-.ground {
-  background-color: #2f303a;
 }
